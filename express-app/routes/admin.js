@@ -1,24 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const path = require('path');
 
 router.get('/add-product', (req,res,next)=> {
-    res.send(
-
-        `
-        <html>
-         <head> <title> this is product page </title> </head>
-         <body>
-            <form action ="admin/add-product" method="POST">
-
-            <input type= "text" name="productName">
-            <input type="submit" value="Save Product" >
-
-            </form>
-         </body>
-        </html>
-        
-        `
-    )
+    app.use('/static', express.static('public'))
 })
 
 router.post('/admin/add-product', (req,res,next) => {
