@@ -1,14 +1,18 @@
 const express = require('express');
 const router = express.Router();
+
 const path = require('path');
 
-router.get('/add-product', (req,res,next)=> {
-    app.use('/static', express.static('public'))
-})
+// /admin/add-product=> GET
+router.get('/add-product', (req, res, next) => {
+    res.render('add-product');
+});
 
-router.post('/admin/add-product', (req,res,next) => {
+// /admin/add-product=> POST
+router.post('/add-product', (req, res, next) => {
+    // database kayıt
     console.log(req.body);
-    res.redirect("/");
-})
+    res.redirect('/');
+});
 
 module.exports = router;

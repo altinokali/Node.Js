@@ -3,12 +3,16 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 
+app.set('view engine', 'pug');
+app.set('views', './views')
+
 const adminRoutes = require('./routes/admin');
 const userRoutes = require('./routes/user');
 
 
 app.use(bodyParser.urlencoded({ extended:false }));
-app.use(express.static('public')) // image,css gibi dosyaları node.js de dışarıya açmak için kullandım.
+app.use(express.static(path.join(__dirname, 'public')));
+ // image,css gibi dosyaları node.js de dışarıya açmak için kullandım.
  //https://expressjs.com/tr/starter/static-files.html
  
 
@@ -20,8 +24,7 @@ app.use(userRoutes);
 app.use((req,res) => { // Yukarıdaki routeler'da (endpointler'de) tanımlı olmayan bir endpointe
 
     //  istek atılırsa cannotGet yerine aşağıdaki middleware girsin ve hata mesajı yazsın.
-    res.status(404);
-    res.sendFile(path.join(__dirname, 'views', 'error.html'));
+    res.status(404).render('404');
 })
 
 
