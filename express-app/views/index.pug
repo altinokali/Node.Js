@@ -10,89 +10,40 @@ block content
         
             .carousel-inner
                 .carousel-item.active
-                    img(src="/img/indir.png" alt="").d-block.img-fluid
+                    img(src="/img/slider1.png" alt="").d-block.img-fluid
             
                 .carousel-item
-                    img(src="/img/indir (1).png" alt="").d-block.img-fluid
+                    img(src="/img/slider2.png" alt="").d-block.img-fluid
                 
                 .carousel-item
-                    img(src="/img/indir (2).png" alt="").d-block.img-fluid
+                    img(src="/img/slider3.png" alt="").d-block.img-fluid
 
         
             a(href="#mySlider"  data-slide="prev").carousel-control-prev
                 span.carousel-control-prev-icon
             
             a(href="#mySlider"  data-slide="next").carousel-control-next
-                span.carousel-control-next-icon
+            span.carousel-control-next-icon
 
     
 
         .row
-            .col-md-4
+            each product in products
+                .col-md-4
 
-                .card.my-3
-                    img(src="/img/iphone13.jpg" alt="").card-img-top
-                    .card-body
-                        h4.card-title
-                            a(href="#") Product Name
+                    .card.my-3
+                        img(src=`/img/${product.image}` alt=`${product.description}`).card-img-top
+                        .card-body
+                            h4.card-title
+                                a(href="#") #{product.name}
+                            
+                            p.card-text.pt-2 #{product.description}  
                         
-                        p.card-text.pt-2 Lorem ipsum dolor sit.  
+                        .card-footer
+                            small.text-muted
+                                i.fas.fa-lira-sign #{product.price}
+
+                            a(href="#").btn.btn-secondary.btn-sm.float-right
+                                i.fa.fa-angle-double-right Details 
+
                     
-                    .card-footer
-                        small.text-muted
-                            i.fas.fa-lira-sign 100
-
-                        a(href="#").btn.btn-secondary.btn-sm.float-right
-                            i.fa.fa-angle-double-right Details 
-
-            .col-md-4
-
-                .card.my-3
-                    img(src="/img/iphone12.jpeg" alt="").card-img-top
-                    .card-body
-                        h4.card-title
-                            a(href="#") Product Name
-                        
-                        p.card-text.pt-2 Lorem ipsum dolor sit.  
-                    
-                    .card-footer
-                        small.text-muted
-                            i.fas.fa-lira-sign 100
-
-                        a(href="#").btn.btn-secondary.btn-sm.float-right
-                            i.fa.fa-angle-double-right Details    
-
-            .col-md-4
-
-                .card.my-3
-                    img(src="/img/samsung-s21.webp" alt="").card-img-top
-                    .card-body
-                        h4.card-title
-                            a(href="#") Product Name
-                        
-                        p.card-text.pt-2 Lorem ipsum dolor sit.  
-                    
-                    .card-footer
-                        small.text-muted
-                            i.fas.fa-lira-sign 100
-
-                        a(href="#").btn.btn-secondary.btn-sm.float-right
-                            i.fa.fa-angle-double-right Details 
-
-
-            .col-md-4
-
-                .card.my-3
-                    img(src="/img/iphone13.jpg" alt="").card-img-top
-                    .card-body
-                        h4.card-title
-                            a(href="#") Product Name
-                        
-                        p.card-text.pt-2 Lorem ipsum dolor sit.  
-                    
-                    .card-footer
-                        small.text-muted
-                            i.fas.fa-lira-sign 100
-
-                        a(href="#").btn.btn-secondary.btn-sm.float-right
-                            i.fa.fa-angle-double-right Details              

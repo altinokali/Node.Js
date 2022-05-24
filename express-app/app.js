@@ -24,7 +24,7 @@ app.use(userRoutes);
 app.use((req,res) => { // Yukarıdaki routeler'da (endpointler'de) tanımlı olmayan bir endpointe
 
     //  istek atılırsa cannotGet yerine aşağıdaki middleware girsin ve hata mesajı yazsın.
-    res.status(404).render('404');
+    res.status(404).render('404', {title: 'Error Page'});
 })
 
 
