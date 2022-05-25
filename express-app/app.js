@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 app.set('view engine', 'pug');
 app.set('views', './views')
 
-const adminRoutes = require('./routes/admin');
+const admin = require('./routes/admin');
 const userRoutes = require('./routes/user');
 
 
@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, 'public')));
  
 
 //routes
-app.use('/admin',adminRoutes);
+app.use('/admin',admin.routes);
 // baştaki admin ile routes kısmında her endpointin başına /admin eklemek zorunda kalmıyorum. ör: /admin/add-product
 app.use(userRoutes);
 
